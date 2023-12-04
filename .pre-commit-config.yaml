@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: sqlfluff
+        name: sqlfluff
+        entry: conda run -n sqlfluff-diff-quality-pre-commit-hook-reproduce diff-quality --violations sqlfluff --compare-branch origin/main
+        language: system
+        types: [sql]

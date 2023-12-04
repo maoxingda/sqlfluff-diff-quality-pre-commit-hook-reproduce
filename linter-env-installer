@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+project_name=$(basename $(pwd))
+
+conda create -y -n ${project_name} python=3.10
+
+conda activate ${project_name}
+
+pip install -r dev-requirements.txt
+
+pre-commit install
